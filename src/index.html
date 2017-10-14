@@ -18,47 +18,58 @@
                 <h1>7h3&nbsp;5h0p</h1>
             </div>
             <div class="header-imgLogo">
-                <img src="img/logo.jpg" alt="logo">
+                <a href="#"><img src="img/logo.jpg" alt="logo"></a>     
             </div>
             <div class="header-phone">+7(812)2&#149;12&#149;85&#149;06</div>
         </header>
 
-        <nav>
-            <a href="#">LISP</a>
-            <a href="#">OCaml</a>
-            <a href="#">JavaScript</a>
-            <a href="#">Python</a>
-            <a href="#">PHP</a>
+        <div class="nav"> 
+            <div class="nav-menu">
+                <a href="#">LISP</a>
+                <a href="#">OCaml</a>
+                <a href="#">JavaScript</a>
+                <a href="#">Python</a>
+                <a href="#">PHP</a>
+            </div>
+            <div class="nav-search">
+                <input type="text">
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <a href="#">LISP</a>/
+            <a href="#">Одежда</a>/
+            <a href="#">Футболки</a>
         </nav>
 
-        <section>
-            <nav>
-                <a href="#">LISP</a>
-                <a href="#">Одежда</a>
-                <a href="#">Футболки</a>
-            </nav>
-            <img src="img/tshirts/tshirt_green.jpg" alt="tshirt" width="700px">
-        </section>
-
-        <section>
-            <h2>Футболка Alien technology</h2>
-            <p>Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.</p>
-            <span>1500Р</span>
-            <div>
-                <p>Размер:</p>
-                <div>S</div>
-                <div>M</div>
-                <div>L</div>
+        <div class="sections">
+            <div class="sections-leftSection">
+                <img src="img/tshirts/tshirt_green.jpg" alt="tshirt" width="100%">
             </div>
-            <div>
-                <p>Цвет:</p>
-                <div></div>
-                <div></div>
-                <div></div>
+    
+            <div class="sections-rightSection">
+                <h2>Футболка Alien technology</h2>
+                <p class="sections-rightSection-composition">Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.</p>
+                <span>1500Р</span>
+                <div class="sections-rightSection-category">
+                    <p>Размер:</p>
+                    <div class="sections-rightSection-size">S</div>
+                    <div class="sections-rightSection-size">M</div>
+                    <div class="sections-rightSection-size">L</div>
+                </div>
+                <div class="sections-rightSection-category">
+                    <p>Цвет:</p>
+                    <div class="sections-rightSection-color sections-rightSection-color_white"></div>
+                    <div class="sections-rightSection-color sections-rightSection-color_yellow"></div>
+                    <div class="sections-rightSection-color sections-rightSection-color_gray"></div>
+                </div>
+                <button>Купить</button>
+                <div class="sections-rightSection-later">
+                    <!-- <img src="img/icons/heart.svg" alt="heart" height="100%"> -->
+                    <a href="#">Отложить на потом</a>
+                </div>
             </div>
-            <button>Купить</button>
-            <a href="#">Отложить на потом</a>
-        </section>
+        </div>
 
         <footer class="footer">
             <ul>
