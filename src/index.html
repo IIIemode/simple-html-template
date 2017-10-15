@@ -25,7 +25,7 @@
 
         <div class="nav"> 
             <div class="nav-menu">
-                <a href="#">LISP</a>
+                <a href="#" class="active">LISP</a>
                 <a href="#">OCaml</a>
                 <a href="#">JavaScript</a>
                 <a href="#">Python</a>
@@ -39,12 +39,12 @@
         <nav class="navigation">
             <a href="#">LISP</a>/
             <a href="#">Одежда</a>/
-            <a href="#">Футболки</a>
+            <a href="#" class="active">Футболки</a>
         </nav>
 
         <div class="sections">
             <div class="sections-leftSection">
-                <img src="img/tshirts/tshirt_green.jpg" alt="tshirt" width="100%">
+                <img src="img/tshirts/tshirt_white.jpg" alt="tshirt" width="100%">
             </div>
     
             <div class="sections-rightSection">
@@ -53,15 +53,15 @@
                 <span>1500Р</span>
                 <div class="sections-rightSection-category">
                     <p>Размер:</p>
-                    <div class="sections-rightSection-size">S</div>
-                    <div class="sections-rightSection-size">M</div>
-                    <div class="sections-rightSection-size">L</div>
+                    <div class="sections-rightSection-size" id="smallTshirt">S</div>
+                    <div class="sections-rightSection-size sections-rightSection_activeSize" id="middleTshirt">M</div>
+                    <div class="sections-rightSection-size" id="largeTshirt">L</div>
                 </div>
                 <div class="sections-rightSection-category">
                     <p>Цвет:</p>
-                    <div class="sections-rightSection-color sections-rightSection-color_white"></div>
-                    <div class="sections-rightSection-color sections-rightSection-color_yellow"></div>
-                    <div class="sections-rightSection-color sections-rightSection-color_gray"></div>
+                    <div class="sections-rightSection-color sections-rightSection-color_white sections-rightSection_activeColor" id="whiteTshirt"></div>
+                    <div class="sections-rightSection-color sections-rightSection-color_yellow" id="yellowTshirt"></div>
+                    <div class="sections-rightSection-color sections-rightSection-color_green" id="greenTshirt"></div>
                 </div>
                 <button>Купить</button>
                 <div class="sections-rightSection-later">
