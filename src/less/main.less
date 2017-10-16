@@ -69,13 +69,17 @@ h1, h2, p, ul {
         padding: 15px 0;
     }
 
-    &-search input{
+    &-search input {
         margin-left: 100px;
         margin-right: 100px;
         width: 280px;
         height: 30px;
         color: #CC0000;
         border: 1px solid #F2F2ED;
+        padding: 5px 10px 5px 40px;
+        background: url(../img/icons/search.jpg) 97% no-repeat;
+        background-size: auto 60%;
+        background-color: white;
     }
 }
 
@@ -113,7 +117,6 @@ h1, h2, p, ul {
         display: inline-block;
         width: 50%;
         margin-right: 5%;
-        // background-color: #E6DFD9;
         margin-top: -100px;
         margin-top: 0;
     }
@@ -132,6 +135,9 @@ h1, h2, p, ul {
             font-size: 36px;
             margin-right: 10px;
             cursor: pointer;
+
+            text-align: center;
+            padding-top: 7px;
 
             &:hover {
                 border: 2px solid #F02323;
@@ -200,10 +206,11 @@ h1, h2, p, ul {
         }
 
         &-later {
-            // background-color: red;
+            background: url(../img/icons/heartFill.svg) no-repeat;
+            padding-left: 35px;
             margin-top: 40px;
             height: 25px;
-
+            line-height: 1.5;
         }
 
         a {
