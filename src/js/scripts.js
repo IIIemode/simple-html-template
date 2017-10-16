@@ -8,8 +8,14 @@
     const whiteTshirt = tshirt[1].querySelector('#whiteTshirt');
     const yellowTshirt = tshirt[1].querySelector('#yellowTshirt');
     const greenTshirt = tshirt[1].querySelector('#greenTshirt');
-
     const pictureTshirt = d.querySelectorAll('.sections-leftSection img')[0];
+
+    // const rightSection = d.querySelectorAll('.sections-rightSection')[0];
+    // console.log(rightSection.offsetHeight);
+    // console.log(pictureTshirt.offsetHeight);
+    // pictureTshirt.style.marginTop = -(rightSection.offsetHeight - pictureTshirt.offsetHeight) / 3 + 'px';
+    // console.log(pictureTshirt.style.marginTop);
+    // console.log(pictureTshirt.offsetWidth);
 
     whiteTshirt.addEventListener('click', ( {target} ) => {
         pictureTshirt.src = 'img/tshirts/tshirt_white.jpg';
