@@ -367,6 +367,24 @@ a {
         font-size: 14px;
         line-height: 24px;
         // display: inline-block;
+        margin: 0 -100px 50px -100px;
+        // width: 100%;
+
+        @media @phone {
+            margin: 575px 0 0 0;
+        }
+
+        @media @phone-strict {
+            margin: 575px 0 0 0;
+        }
+    
+        @media @tablet {
+            margin: 0 -100px 0 -100px;
+        }
+
+        @media @desktop {
+            margin: 0 -100px 0 -100px;
+        }
 
         & a:hover {
             text-decoration: underline;
@@ -378,27 +396,22 @@ a {
             flex-direction: row;
             align-items: flex-start;
             justify-content: space-between;
-            margin: -100px -100px 0 -100px;
             padding-top: 65px;
             padding-bottom: 100px;
 
             @media @phone {
-                margin: 255px 0 0 -100px;
                 flex-direction: column;
             }
 
             @media @phone-strict {
-                margin: 255px 0 0 -100px;
                 flex-direction: column;
             }
         
             @media @tablet {
-                margin: -100px -100px 0 -100px;
                 flex-direction: row;
             }
 
             @media @desktop {
-                margin: -100px -100px 0 -100px;
                 flex-direction: row;
             }
 
@@ -537,29 +550,13 @@ a {
 
         &-bottom {
             background-color: #F2F2ED;
-            margin: -30px -100px 0 -100px;
+            margin-top: -30px;
             padding-bottom: 105px;
             padding-left: 100px;
             padding-right: 100px;
 
             & hr {
                 margin-bottom: 35px;
-            }
-
-            @media @phone {
-                margin: -30px 0 0 -100px;
-            }
-
-            @media @phone-strict {
-                margin: -30px 0 0 -100px;
-            }
-        
-            @media @tablet {
-                margin: -30px -100px 0 -100px;
-            }
-
-            @media @desktop {
-                margin: -30px -100px 0 -100px;
             }
         }
     }
