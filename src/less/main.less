@@ -39,6 +39,94 @@ a {
     }
 }
 
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &__menu {
+        margin-left: 100px;
+        padding: 15px 0;
+
+        @media @phone {
+            margin-left: 20px;
+        }
+    
+        @media @phone-strict {
+            margin-left: 20px;
+        }
+    
+        @media @tablet {
+            margin-left: 100px;
+        }
+    
+        @media @desktop {
+            margin-left: 100px;
+        }
+    }
+
+    &__link {
+        font-size: 16px;
+        color: #CC0000;
+        margin-right: 15px;
+        text-decoration: underline;
+
+        &:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        &_active {
+            color: black;
+            text-decoration: none;
+        }
+    }
+
+    &__input {
+        margin-left: 100px;
+        margin-right: 100px;
+        width: 280px;
+        height: 30px;
+        color: #CC0000;
+        border: 1px solid #F2F2ED;
+        padding: 5px 10px 5px 40px;
+        background: url(../img/icons/search.svg) 97% no-repeat;
+        background-size: auto 60%;
+        background-color: white;
+
+        @media @phone {
+            margin-top: 5px;
+            margin-left: 20px;
+            margin-right: 5px;
+            width: 240px;
+            margin-bottom: 10px;    
+        }
+    
+        @media @phone-strict {
+            margin-top: 5px;
+            margin-left: 20px;
+            margin-right: 5px;
+            width: 240px;
+            margin-bottom: 10px;     
+        }
+    
+        @media @tablet {
+            margin-left: 100px;
+            margin-right: 100px;
+            width: 280px;
+            margin-bottom: 10px; 
+        }
+    
+        @media @desktop {
+            margin-left: 100px;
+            margin-right: 100px;
+            width: 280px;
+            margin-bottom: 10px; 
+        }
+    }
+}
+
 .container {
     margin: 0 100px;
 
@@ -54,106 +142,24 @@ a {
         width: 100%;
     }
 
-    .nav {
-        background-color: #F2F2ED;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
+    &__nav {
         margin: 0 -100px 50px -100px;
+        background-color: #F2F2ED;
 
         @media @phone {
             margin: 0 0 50px 0;
         }
-
+    
         @media @phone-strict {
             margin: 0 0 50px 0;
         }
-
+    
         @media @tablet {
             margin: 0 -100px 50px -100px;
         }
-
+    
         @media @desktop {
             margin: 0 -100px 50px -100px;
-        }
-
-        & a {
-            font-size: 16px;
-            color: #CC0000;
-            margin-right: 15px;
-
-            &:hover {
-                color: black;
-                text-decoration: none;
-            }
-
-            &.active {
-                color: black;
-                text-decoration: none;
-            }
-        }
-
-        &-menu {
-            margin-left: 100px;
-            padding: 15px 0;
-
-            @media @phone {
-                margin-left: 20px;
-            }
-        
-            @media @phone-strict {
-                margin-left: 20px;
-            }
-        
-            @media @tablet {
-                margin-left: 100px;
-            }
-        
-            @media @desktop {
-                margin-left: 100px;
-            }
-        }
-
-        &-search input {
-            margin-left: 100px;
-            margin-right: 100px;
-            width: 280px;
-            height: 30px;
-            color: #CC0000;
-            border: 1px solid #F2F2ED;
-            padding: 5px 10px 5px 40px;
-            background: url(../img/icons/search.svg) 97% no-repeat;
-            background-size: auto 60%;
-            background-color: white;
-
-            @media @phone {
-                margin-left: 20px;
-                margin-right: 0;
-                margin-bottom: 10px;
-                width: 240px;    
-            }
-        
-            @media @phone-strict {
-                margin-left: 20px;
-                margin-right: 0;
-                width: 240px; 
-                margin-bottom: 10px;       
-            }
-        
-            @media @tablet {
-                margin-left: 100px;
-                margin-right: 100px;
-                width: 280px;
-                margin-bottom: 10px; 
-            }
-        
-            @media @desktop {
-                margin-left: 100px;
-                margin-right: 100px;
-                width: 280px;
-                margin-bottom: 0; 
-            }
         }
     }
 
