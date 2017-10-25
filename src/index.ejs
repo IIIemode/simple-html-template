@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>7h3 5h0p</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -28,13 +28,12 @@
             </div>
         </header>
 
-        <div class="container__nav nav"> 
+        <div class="container__nav nav">
+            <% const navMenu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP']; %>
             <div class="nav__menu">
-                <a href="#" class="nav__link nav__link_active">LISP</a>
-                <a href="#" class="nav__link">OCaml</a>
-                <a href="#" class="nav__link">JavaScript</a>
-                <a href="#" class="nav__link">Python</a>
-                <a href="#" class="nav__link">PHP</a>
+                <% navMenu.forEach((item, index) => { %>
+                    <a href="#" class="nav__link <% if (index === 0) { %><%= 'nav__link_active' %><% } %>"><%= item %></a>
+                <% }); %>
             </div>
             <div class="nav__search">
                 <input type="text" class="nav__input">
@@ -42,9 +41,10 @@
         </div>
 
         <nav class="container__navigation navigation">
-            <a href="#" class="navigation__link">LISP</a>/
-            <a href="#" class="navigation__link">Одежда</a>/
-            <a href="#" class="navigation__link navigation__link_active">Футболки</a>
+            <% const navigation = ['LISP', 'Одежда', 'Футболки']; %>
+            <% navigation.forEach((item, index) => { %>
+                <a href="#" class="navigation__link <% if (index === 2) { %><%= 'navigation__link_active'%><% } %>"><%= item %></a>
+            <% }); %>
         </nav>
 
         <div class="container__sections sections">
@@ -55,7 +55,7 @@
             <div class="container__sections_right sections__right-section right-section">
                 <h1 class="right-section__title">Футболка Alien technology</h1>
                 <p class="right-section__description">Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.</p>
-                <span class="right-section__price">1500&#8381;</span>
+                <span class="right-section__price">1500₽</span>
                 <div class="right-section__category">
                     <p class="right-section__size-text">Размер:</p>
                     <div class="right-section__size" id="smallTshirt">S</div>
@@ -80,44 +80,47 @@
             <div class="footer__top top-footer">
                 <div class="top-footer__service footer-service">
                     <a href="#" class="footer-service__title">Сервис и поддержка</a>
+                    <% const serviceLeft = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Доставка']; %>
                     <ul class="footer-service__left">
-                        <li><a href="#">Как сделать заказ</a></li>
-                        <li><a href="#">Возврат товара</a></li>
-                        <li><a href="#">Публичная оферта</a></li>
-                        <li><a href="#">Доставка</a></li>
+                        <% serviceLeft.forEach(item => { %>
+                            <li><a href="#"><%= item %></a></li>
+                        <% }); %>
                     </ul>
+                    <% const serviceRight = ['Способы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы']; %>
                     <ul class="footer-service__right">
-                        <li><a href="#">Способы оплаты</a></li>
-                        <li><a href="#">Правила продажи</a></li>
-                        <li><a href="#">Возврат денежных средств</a></li>
-                        <li><a href="#">Вопросы и ответы</a></li>
+                        <% serviceRight.forEach(item => { %>
+                            <li><a href="#"><%= item %></a></li>
+                        <% }); %>
                     </ul>
                 </div>
                 <div class="top-footer__about footer-about">
                     <a href="#" class="footer-about__title">О компании</a>
+                    <% const aboutLeft = ['О нас', 'Контакты', 'Вакансии', 'Партнерам']; %>
                     <ul class="footer-about__left">
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Контакты</a></li>
-                        <li><a href="#">Вакансии</a></li>
-                        <li><a href="#">Партнерам</a></li>
+                        <% aboutLeft.forEach(item => { %>
+                            <li><a href="#"><%= item %></a></li>
+                        <% }); %> 
                     </ul>
+                    <% const aboutRight = ['Cертификаты', 'Преимущества', 'Наши скидки']; %>
                     <ul class="footer-about__right">
-                        <li><a href="#">Cертификаты</a></li>
-                        <li><a href="#">Преимущества</a></li>
-                        <li><a href="#">Наши скидки</a></li>
+                        <% aboutRight.forEach(item => { %>
+                            <li><a href="#"><%= item %></a></li>
+                        <% }); %> 
                     </ul>
                 </div>
                 <div class="top-footer__features footer-features">
+                        <% const features = ['бесплатная доставка от 4000 ₽', 'пробники в подарок при каждой покупке', 'акции и подарки за покупку']; %>
                     <ul>
-                        <li>
-                            <a href="#" class="footer-features__delivery">бесплатная доставка от 4000 &#8381;</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer-features__heart">пробники в подарок при каждой покупке</a>
-                        </li>
-                        <li>
-                            <a href="#" class="footer-features__cup">акции и подарки за покупку</a>
-                        </li>
+                        <% features.forEach((item, index) => { %>
+                            <li><a href="#" class="<% if (index === 0) { %>
+                                    <%= classList="footer-features__delivery" %>
+                                <% } else if (index === 1) { %>
+                                    <%= classList="footer-features__heart" %>
+                                <% } else if (index === 2) { %>
+                                    <%= classList="footer-features__cup" %>
+                                <% } %>
+                            "><%= item %></a></li>
+                        <% }); %> 
                     </ul>
                 </div>
                 <div class="top-footer__social">
