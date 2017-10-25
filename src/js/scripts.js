@@ -1,10 +1,7 @@
 (() => {
 
     const d = document;
-    const tshirt = d.querySelectorAll('.right-section__category'); 
-    const smallTshirt = tshirt[0].querySelector('#smallTshirt');
-    const middleTshirt = tshirt[0].querySelector('#middleTshirt');
-    const largeTshirt = tshirt[0].querySelector('#largeTshirt');
+    const tshirt = d.querySelectorAll('.right-section__category');
     const whiteTshirt = tshirt[1].querySelector('#whiteTshirt');
     const yellowTshirt = tshirt[1].querySelector('#yellowTshirt');
     const greenTshirt = tshirt[1].querySelector('#greenTshirt');
@@ -41,5 +38,3 @@
     });
 
 })();
-
-
