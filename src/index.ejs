@@ -56,10 +56,11 @@
                 <p class="right-section__description">Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.</p>
                 <span class="right-section__price">1500₽</span>
                 <div class="right-section__category">
+                    <% const size = ['S', 'M', 'L']; %>
                     <p class="right-section__size-text">Размер:</p>
-                    <div class="right-section__size" id="smallTshirt">S</div>
-                    <div class="right-section__size right-section__size_active" id="middleTshirt">M</div>
-                    <div class="right-section__size" id="largeTshirt">L</div>
+                    <% size.forEach((item, index) => { %>
+                    <div class="right-section__size <% if (index === 1) { %><%= 'right-section__size_active'%><% } %>"><%= item %></div>
+                    <% }); %>
                 </div>
                 <div class="right-section__category">
                     <p class="right-section__color-text">Цвет:</p>
