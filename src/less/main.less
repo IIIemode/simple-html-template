@@ -2,10 +2,13 @@
 @import 'media';
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
 }
 
-h1, h2, p, ul {
+h1,
+h2,
+p,
+ul {
     margin: 0;
     padding: 0;
 }
@@ -20,13 +23,14 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    
+
     &__company-name {
         display: inline-block;
         font-size: 24px;
     }
+
     &__company-link {
-        color: #cc0000;
+        color: #c00;
         font-weight: bold;
     }
 
@@ -37,7 +41,7 @@ a {
     &__phone {
         display: inline-block;
         font-size: 24px;
-        color: #CC0000;
+        color: #C00;
         font-weight: bold;
     }
 }
@@ -55,15 +59,15 @@ a {
         @media @phone {
             margin-left: 20px;
         }
-    
+
         @media @phone-strict {
             margin-left: 20px;
         }
-    
+
         @media @tablet {
             margin-left: 100px;
         }
-    
+
         @media @desktop {
             margin-left: 100px;
         }
@@ -71,7 +75,7 @@ a {
 
     &__link {
         font-size: 16px;
-        color: #CC0000;
+        color: #C00;
         margin-right: 15px;
         text-decoration: underline;
 
@@ -91,7 +95,7 @@ a {
         margin-right: 100px;
         width: 280px;
         height: 30px;
-        color: #CC0000;
+        color: #C00;
         border: 1px solid #F2F2ED;
         padding: 5px 10px 5px 40px;
         background: url(../img/icons/search.svg) 97% no-repeat;
@@ -99,42 +103,35 @@ a {
         background-color: white;
 
         @media @phone {
-            margin-top: 5px;
-            margin-left: 20px;
-            margin-right: 5px;
+            margin-top: 5px 5px 5px 20px;
             width: 220px;
-            margin-bottom: 5px;    
         }
-    
+
         @media @phone-strict {
-            margin-top: 5px;
-            margin-left: 20px;
-            margin-right: 5px;
+            margin-top: 5px 5px 5px 20px;
             width: 220px;
-            margin-bottom: 5px;     
         }
-    
+
         @media @tablet {
             margin-left: 100px;
             margin-right: 100px;
             width: 280px;
-            margin-bottom: 5px; 
+            margin-bottom: 5px;
         }
-    
+
         @media @desktop {
             margin-left: 100px;
             margin-right: 100px;
             width: 280px;
-            margin-bottom: 5px; 
+            margin-bottom: 5px;
         }
     }
 }
 
 .navigation {
-
     &__link {
         font-size: 16px;
-        color: #CC0000;
+        color: #C00;
         margin-right: 5px;
         text-decoration: underline;
 
@@ -144,7 +141,7 @@ a {
         }
 
         &_active {
-            color: #000000;
+            color: #000;
             text-decoration: none;
         }
     }
@@ -162,43 +159,40 @@ a {
         width: 50%;
         margin-right: 5%;
     }
-    
+
     &__right-section {
         display: inline-block;
         width: 45%;
     }
 }
 
-.left-section {
-
-    &__img {
-        min-width: 300px;
-    }
+.left-section__img {
+    min-width: 300px;
 }
 
 .right-section {
-
     &__title {
         font-size: 36px;
         margin-bottom: 16px;
     }
-    
+
     &__description {
         font-size: 16px;
-        margin-bottom: 16px;           
+        margin-bottom: 16px;
     }
 
     &__price {
         font-weight: bold;
         font-size: 36px;
-        color: #CC0000;
+        color: #C00;
     }
 
     &__category {
         margin-top: 23px;
     }
 
-    &__size-text, &__color-text {
+    &__size-text,
+    &__color-text {
         margin-bottom: 9px;
     }
 
@@ -259,7 +253,7 @@ a {
         font-size: 36px;
         padding: 3% 7%;
         margin-top: 24px;
-        color: #FFDDDD;
+        color: #FDD;
         background-color: #CE0000;
         cursor: pointer;
     }
@@ -296,7 +290,7 @@ a {
             flex-direction: column;
             padding-bottom: 50px;
         }
-    
+
         @media @tablet {
             flex-direction: row;
         }
@@ -343,17 +337,15 @@ a {
 }
 
 .top-footer {
-
     &__service {
         margin-left: 100px;
-    
+
         @media @phone-strict {
             margin-left: 10px;
         }
     }
-    
-    &__about {
 
+    &__about {
         @media @phone {
             margin-left: 100px;
             margin-top: 15px;
@@ -375,12 +367,13 @@ a {
         @media @phone-strict {
             margin-left: 10px;
         }
-    
+
         @media @tablet {
             margin-left: 0;
             margin-top: 0;
             line-height: 25px;
         }
+
         @media @desktop {
             line-height: 45px;
         }
@@ -390,36 +383,36 @@ a {
         margin-right: 100px;
         line-height: 35px;
         text-align: center;
-    
+
         @media @phone-strict {
             margin-left: auto;
             margin-right: auto;
         }
-    
+
         @media @tablet {
             margin-left: 0;
             margin-top: 0;
         }
-    
+
         &-list {
             list-style-type: none;
-    
+
             @media @phone {
                 display: flex;
             }
-        
+
             @media @tablet {
                 display: block;
             }
         }
-    
+
         &-item {
             font-weight: normal;
 
             @media @phone {
                 margin-right: 30px;
             }
-        
+
             @media @tablet {
                 margin-right: 0;
             }
@@ -435,7 +428,7 @@ a {
         font-weight: bold;
         white-space: nowrap;
     }
-    
+
     &__left {
         margin-top: 40px;
         margin-left: -155px;
@@ -455,7 +448,7 @@ a {
         font-weight: bold;
         white-space: nowrap;
     }
-    
+
     &__left {
         margin-top: 40px;
         margin-left: -90px;
@@ -465,11 +458,9 @@ a {
         margin-top: 40px;
         margin-left: 50px;
     }
-    
 }
 
 .footer-features {
-    
     &__delivery {
         background: url(../img/icons/delivery.svg) no-repeat;
         padding-left: 40px;
@@ -511,17 +502,17 @@ a {
         background-color: #F2F2ED;
 
         @media @phone {
-            margin: 0 0 50px 0;
+            margin: 0 0 50px;
         }
-    
+
         @media @phone-strict {
-            margin: 0 0 50px 0;
+            margin: 0 0 50px;
         }
-    
+
         @media @tablet {
             margin: 0 -100px 50px -100px;
         }
-    
+
         @media @desktop {
             margin: 0 -100px 50px -100px;
         }
@@ -530,19 +521,18 @@ a {
     &__navigation {
         margin-bottom: 20px;
     }
-   
+
     &__sections {
         margin-bottom: 100px;
 
         @media @phone-strict {
             margin-bottom: 0;
         }
-    
+
         &_left {
             margin-right: 5%;
-            margin-top: -100px;
             margin-top: 0;
-    
+
             @media @phone {
                 width: 100%;
                 margin-right: 0;
@@ -554,18 +544,18 @@ a {
                 margin-right: 0;
                 margin-bottom: 35px;
             }
-        
+
             @media @tablet {
                 width: 50%;
                 margin-right: 0;
             }
-    
+
             @media @desktop {
                 width: 50%;
                 margin-right: 5%;
             }
         }
-        
+
         &_right {
             width: 45%;
 
@@ -580,7 +570,7 @@ a {
                 margin-right: 0;
                 margin-bottom: 35px;
             }
-        
+
             @media @tablet {
                 width: 45%;
             }
@@ -591,17 +581,17 @@ a {
         margin: 0 -100px 50px -100px;
 
         @media @phone {
-            margin: 0 0 0 0;
+            margin: 0;
         }
-    
+
         @media @phone-strict {
-            margin: 0 0 0 0;
+            margin: 0;
         }
-    
+
         @media @tablet {
             margin: 0 -100px 0 -100px;
         }
-    
+
         @media @desktop {
             margin: 0 -100px 0 -100px;
         }

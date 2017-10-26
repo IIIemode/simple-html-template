@@ -34,7 +34,6 @@ module.exports = {
         // Unit
         'unit-blacklist': ['pt'],
         'unit-case': 'lower',
-        'unit-no-unknown': 'true',
 
         // Value
         'value-keyword-case': 'lower',
