@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>7h3 5h0p</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -35,7 +34,9 @@
                 <% }); %>
             </div>
             <div class="nav__search">
-                <input type="text" class="nav__input">
+                <form action="search.php" method="GET" name="searchForm">
+                    <input type="text" class="nav__input" name="search">
+                </form>
             </div>
         </div>
 
@@ -47,28 +48,46 @@
         </nav>
 
         <div class="container__sections sections">
+            <% const tshirt = {
+                'src': ['img/tshirts/tshirt_white.jpg', 'img/tshirts/tshirt_yellow.jpg', 'img/tshirts/tshirt_green.jpg'],
+                'title': 'Футболка Alien technology',
+                'description': 'Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.',
+                'price': '1500₽',
+                'size-text': 'Размер:',
+                'size': ['S', 'M', 'L'],
+                'color-text': 'Цвет:',
+                'color': ['white', 'yellow', 'green']
+            }; %>
             <div class="container__sections_left sections__left-section left-section">
                 <img src="img/tshirts/tshirt_white.jpg" alt="tshirt" width="100%" class="left-section__img">
             </div>
     
             <div class="container__sections_right sections__right-section right-section">
-                <h1 class="right-section__title">Футболка Alien technology</h1>
-                <p class="right-section__description">Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.</p>
-                <span class="right-section__price">1500₽</span>
-                <div class="right-section__category">
-                    <% const size = ['S', 'M', 'L']; %>
-                    <p class="right-section__size-text">Размер:</p>
-                    <% size.forEach((item, index) => { %>
-                    <div class="right-section__size <% if (index === 1) { %><%= 'right-section__size_active'%><% } %>"><%= item %></div>
-                    <% }); %>
-                </div>
-                <div class="right-section__category">
-                    <p class="right-section__color-text">Цвет:</p>
-                    <div class="right-section__color right-section__color_white right-section__color_active" id="whiteTshirt"></div>
-                    <div class="right-section__color right-section__color_yellow" id="yellowTshirt"></div>
-                    <div class="right-section__color right-section__color_green" id="greenTshirt"></div>
-                </div>
-                <button class="right-section__btn-buy">Купить</button>
+                <h1 class="right-section__title"><%= tshirt.title %></h1>
+                <p class="right-section__description"><%= tshirt.description %></p>
+                <span class="right-section__price"><%= tshirt.price %></span>
+                <form action="choice.php" method="POST" name="choiceForm">
+                    <div class="right-section__category">
+                        <p class="right-section__size-text"><%= tshirt['size-text'] %></p>
+                        <% tshirt.size.forEach((item, index) => { %>
+                        <input
+                            name="size"
+                            class="right-section__size <% if (index === 1) { %><%= 'right-section__size_active'%><% } %>" 
+                            placeholder="<%= item %>" 
+                            readonly></input>
+                        <% }); %>
+                    </div>
+                    <div class="right-section__category">
+                        <p class="right-section__color-text"><%= tshirt['color-text'] %></p>
+                        <% tshirt.color.forEach((item, index) => { %>
+                        <input
+                            name="color"
+                            class="right-section__color <% if (index === 0) { %><%= 'right-section__color_active'%><% } %> right-section__color_<%= item %>" 
+                            readonly></input>
+                        <% }); %>
+                    </div>
+                    <button class="right-section__btn-buy">Купить</button>
+                </form>    
                 <div class="right-section__later">
                     <a href="#" class="right-section__later-link" >Отложить на потом</a>
                 </div>
@@ -111,14 +130,16 @@
                         <% const features = ['бесплатная доставка от 4000 ₽', 'пробники в подарок при каждой покупке', 'акции и подарки за покупку']; %>
                     <ul>
                         <% features.forEach((item, index) => { %>
-                            <li><a href="#" class="<% if (index === 0) { %>
+                            <li><a href="#" class="
+                                <% if (index === 0) { %>
                                     <%= classList="footer-features__delivery" %>
                                 <% } else if (index === 1) { %>
                                     <%= classList="footer-features__heart" %>
                                 <% } else if (index === 2) { %>
                                     <%= classList="footer-features__cup" %>
                                 <% } %>
-                            "><%= item %></a></li>
+                            "><%= item %></a>
+                        </li>
                         <% }); %> 
                     </ul>
                 </div>
