@@ -19,10 +19,10 @@
             <div class="header__img-logo">
                 <a href="#">
                     <img src="img/logo.jpg" alt="logo">
-                </a>     
+                </a>
             </div>
             <div class="header__phone">
-                <span>+7(812)2&#149;12&#149;85&#149;06</span>         
+                <span>+7(812)2&#149;12&#149;85&#149;06</span>
             </div>
         </header>
 
@@ -49,7 +49,7 @@
 
         <div class="container__sections sections">
             <% const tshirt = {
-                'src': 'img/tshirts/tshirt_white.jpg',
+                'src': 'img/tshirt_white.jpg',
                 'title': 'Футболка Alien technology',
                 'description': 'Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.',
                 'price': '1500₽',
@@ -61,7 +61,7 @@
             <div class="container__sections_left sections__left-section left-section">
                 <img src="<%= tshirt.src %>" alt="tshirt" width="100%" class="left-section__img">
             </div>
-    
+
             <div class="container__sections_right sections__right-section right-section">
                 <h1 class="right-section__title"><%= tshirt.title %></h1>
                 <p class="right-section__description"><%= tshirt.description %></p>
@@ -72,9 +72,9 @@
                         <% tshirt.size.forEach((item, index) => { %>
                         <input
                             name="size"
-                            class="right-section__size <% if (index === 1) { %><%= 'right-section__size_active'%><% } %>" 
-                            placeholder="<%= item %>" 
-                            readonly></input>
+                            class="right-section__size <% if (index === 1) { %><%= 'right-section__size_active'%><% } %>"
+                            placeholder="<%= item %>"
+                            readonly>
                         <% }); %>
                     </div>
                     <div class="right-section__category">
@@ -83,12 +83,12 @@
                         <input
                             data-color="<%= item %>"
                             name="color"
-                            class="right-section__color <% if (index === 0) { %><%= 'right-section__color_active'%><% } %> right-section__color_<%= item %>" 
-                            readonly></input>
+                            class="right-section__color <% if (index === 0) { %><%= 'right-section__color_active'%><% } %> right-section__color_<%= item %>"
+                            readonly>
                         <% }); %>
                     </div>
                     <button class="right-section__btn-buy">Купить</button>
-                </form>    
+                </form>
                 <div class="right-section__later">
                     <a href="#" class="right-section__later-link" >Отложить на потом</a>
                 </div>
@@ -118,13 +118,13 @@
                     <ul class="footer-about__left">
                         <% aboutLeft.forEach(item => { %>
                             <li><a href="#"><%= item %></a></li>
-                        <% }); %> 
+                        <% }); %>
                     </ul>
                     <% const aboutRight = ['Cертификаты', 'Преимущества', 'Наши скидки']; %>
                     <ul class="footer-about__right">
                         <% aboutRight.forEach(item => { %>
                             <li><a href="#"><%= item %></a></li>
-                        <% }); %> 
+                        <% }); %>
                     </ul>
                 </div>
                 <div class="top-footer__features footer-features">
@@ -141,24 +141,24 @@
                                 <% } %>
                             "><%= item %></a>
                         </li>
-                        <% }); %> 
+                        <% }); %>
                     </ul>
                 </div>
                 <div class="top-footer__social">
                     <ul class="top-footer__social-list">
                         <li class="top-footer__social-item">
                             <a href="#" class="top-footer__social-link">
-                                <img src="img/icons/facebook.svg" alt="facebook" width="13px">
+                                <img src="img/facebook.svg" alt="facebook" width="13px">
                             </a>
                         </li>
                         <li class="top-footer__social-item">
                             <a href="#" class="top-footer__social-link">
-                                <img src="img/icons/twitter.svg" alt="twitter" width="25px">
+                                <img src="img/twitter.svg" alt="twitter" width="25px">
                             </a>
                         </li>
                         <li class="top-footer__social-item">
                             <a href="#" class="top-footer__social-link">
-                                <img src="img/icons/instagram.svg" alt="instagram" width="25px">
+                                <img src="img/instagram.svg" alt="instagram" width="25px">
                             </a>
                         </li>
                     </ul>
