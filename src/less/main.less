@@ -91,16 +91,14 @@ a {
     }
 
     &__input {
-        margin-left: 100px;
-        margin-right: 100px;
+        margin: 0 100px;
         width: 280px;
         height: 30px;
         color: #C00;
         border: 1px solid #F2F2ED;
         padding: 5px 10px 5px 40px;
-        background: url(../img/search.svg) 97% no-repeat;
+        background: url(../img/search.svg) white 97% no-repeat;
         background-size: auto 60%;
-        background-color: white;
 
         @media @phone {
             width: 220px;
@@ -128,12 +126,17 @@ a {
     }
 }
 
-.navigation {
+.breadcrumbs {
     &__link {
         font-size: 16px;
         color: #C00;
-        margin-right: 5px;
         text-decoration: underline;
+
+        &::after {
+            content: '/';
+            display: inline-block;
+            margin-left: 5px;
+        }
 
         &:hover {
             color: black;
@@ -145,6 +148,11 @@ a {
             text-decoration: none;
         }
     }
+
+    :last-child::after {
+        content: '';
+        display: inline-block;
+    }
 }
 
 .sections {
@@ -153,24 +161,26 @@ a {
     justify-content: space-between;
     align-items: flex-start;
 
-    &__left-section {
+    &__product-image {
         background-size: 100%;
         display: inline-block;
         width: 50%;
         margin-right: 5%;
     }
 
-    &__right-section {
+    &__product-info {
         display: inline-block;
         width: 45%;
     }
 }
 
-.left-section__img {
+.product-image {
+    &__img {
     min-width: 300px;
+    width: 100%;
 }
 
-.right-section {
+.product-info {
     &__title {
         font-size: 36px;
         margin-bottom: 16px;
@@ -464,6 +474,8 @@ a {
 }
 
 .footer-features {
+    margin-top: -10px;
+
     &__delivery {
         background: url(../img/delivery.svg) no-repeat;
         padding-left: 40px;
@@ -477,6 +489,20 @@ a {
     &__cup {
         background: url(../img/cup.svg) 18px 0 no-repeat;
         padding-left: 40px;
+    }
+}
+
+.footer-social {
+    &__facebook {
+        width: 13px;
+    }
+
+    &__twitter {
+        width: 25px;
+    }
+
+    &__instagram {
+        width: 25px;
     }
 }
 
@@ -521,7 +547,7 @@ a {
         }
     }
 
-    &__navigation {
+    &__breadcrumbs {
         margin-bottom: 20px;
     }
 

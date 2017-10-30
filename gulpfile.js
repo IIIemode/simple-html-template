@@ -34,7 +34,12 @@ gulp.task('styles', () => {
         .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('img', () => {
+gulp.task('img-dev', () => {
+    gulp.src('src/img/**/*.*')
+        .pipe(gulp.dest('./dist/img'));
+});
+
+gulp.task('img-prod', () => {
     imagemin(['src/img/**/*.*'], './dist/img', {
         use: [imageminPngquant()]
     });
@@ -61,5 +66,5 @@ gulp.task('watch', () => {
     gulp.watch('src/js/**/*.*', ['js']);
 });
 
-gulp.task('default', ['styles', 'html', 'img', 'js', 'livereload', 'watch']);
-gulp.task('prod', ['styles', 'html', 'img', 'js']);
+gulp.task('default', ['styles', 'html', 'img-dev', 'js', 'livereload', 'watch']);
+gulp.task('prod', ['styles', 'html', 'img-prod', 'js']);
