@@ -17,6 +17,13 @@ a {
     text-decoration: none;
 }
 
+.company-name {
+    &__link {
+        color: #c00;
+        font-weight: bold; 
+    }
+}
+
 .header {
     padding: 20px 0;
     display: flex;
@@ -27,11 +34,6 @@ a {
     &__company-name {
         display: inline-block;
         font-size: 24px;
-    }
-
-    &__company-link {
-        color: #c00;
-        font-weight: bold;
     }
 
     &__img-logo {
@@ -46,11 +48,20 @@ a {
     }
 }
 
+.oggetto-logo {
+    width: 52px;
+    padding: 20px 0;
+}
+
 .nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
 
     &__menu {
         margin-left: 100px;
@@ -96,8 +107,8 @@ a {
         height: 30px;
         color: #C00;
         border: 1px solid #F2F2ED;
-        padding: 5px 10px 5px 40px;
-        background: url(../img/search.svg) white 97% no-repeat;
+        padding: 5px 10px 5px 0;
+        background: url(../img/icons/search.svg) white 97% no-repeat;
         background-size: auto 60%;
 
         @media @phone {
@@ -107,21 +118,17 @@ a {
 
         @media @phone-strict {
             width: 220px;
-            margin: 5px 5px 5px 20px;
+            margin: 5px 20px 5px 20px;
         }
 
         @media @tablet {
             width: 280px;
-            margin-left: 100px;
-            margin-right: 100px;
-            margin-bottom: 5px;
+            margin: 0 100px 5px 100px;
         }
 
         @media @desktop {
             width: 280px;
-            margin-left: 100px;
-            margin-right: 100px;
-            margin-bottom: 5px;
+            margin: 0 100px 5px 100px;
         }
     }
 }
@@ -166,6 +173,7 @@ a {
         display: inline-block;
         width: 50%;
         margin-right: 5%;
+        min-width: 300px;
     }
 
     &__product-info {
@@ -174,9 +182,11 @@ a {
     }
 }
 
-.product-image__img {
+.product-image {
+    &__img {
     min-width: 300px;
     width: 100%;
+    }
 }
 
 .product-info {
@@ -271,7 +281,7 @@ a {
     }
 
     &__later {
-        background: url(../img/heartFill.svg) no-repeat;
+        background: url(../img/icons/heartFill.svg) no-repeat;
         padding-left: 35px;
         margin-top: 40px;
         height: 25px;
@@ -289,8 +299,12 @@ a {
     font-size: 14px;
     line-height: 24px;
 
+    &__wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
     &__top {
-        background-color: #F2F2ED;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
@@ -313,14 +327,33 @@ a {
     }
 
     &__bottom {
-        background-color: #F2F2ED;
         margin-top: -30px;
         padding-bottom: 105px;
-        padding-left: 100px;
-        padding-right: 100px;
 
         & hr {
             margin-bottom: 35px;
+    
+            @media @tablet {
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+    
+            @media @desktop {
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+        }
+
+        & p {
+            @media @tablet {
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+    
+            @media @desktop {
+                margin-left: 100px;
+                margin-right: 100px;
+            }
         }
 
         @media @phone-strict {
@@ -348,87 +381,22 @@ a {
     }
 }
 
-.top-footer {
-    &__service {
-        margin-left: 100px;
+.footer-features {
+    margin-top: -10px;
 
-        @media @phone-strict {
-            margin-left: 10px;
-        }
+    &__delivery {
+        background: url(../img/icons/delivery.svg) no-repeat;
+        padding-left: 40px;
     }
 
-    &__about {
-        @media @phone {
-            margin-left: 100px;
-            margin-top: 15px;
-        }
-
-        @media @tablet {
-            margin-left: 0;
-            margin-top: 0;
-        }
-
-        @media @phone-strict {
-            margin-left: 10px;
-        }
+    &__heart {
+        background: url(../img/icons/heart.svg) 15px 0 no-repeat;
+        padding-left: 40px;
     }
 
-    &__features {
-        line-height: 45px;
-
-        @media @phone-strict {
-            margin-left: 10px;
-        }
-
-        @media @tablet {
-            margin-left: 0;
-            margin-top: 0;
-            line-height: 25px;
-        }
-
-        @media @desktop {
-            line-height: 45px;
-        }
-    }
-
-    &__social {
-        margin-right: 100px;
-        line-height: 35px;
-        text-align: center;
-
-        @media @phone-strict {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media @tablet {
-            margin-left: 0;
-            margin-top: 0;
-        }
-
-        &-list {
-            list-style-type: none;
-
-            @media @phone {
-                display: flex;
-            }
-
-            @media @tablet {
-                display: block;
-            }
-        }
-
-        &-item {
-            font-weight: normal;
-
-            @media @phone {
-                margin-right: 30px;
-            }
-
-            @media @tablet {
-                margin-right: 0;
-            }
-        }
+    &__cup {
+        background: url(../img/icons/cup.svg) 18px 0 no-repeat;
+        padding-left: 40px;
     }
 }
 
@@ -472,25 +440,6 @@ a {
     }
 }
 
-.footer-features {
-    margin-top: -10px;
-
-    &__delivery {
-        background: url(../img/delivery.svg) no-repeat;
-        padding-left: 40px;
-    }
-
-    &__heart {
-        background: url(../img/heart.svg) 15px 0 no-repeat;
-        padding-left: 40px;
-    }
-
-    &__cup {
-        background: url(../img/cup.svg) 18px 0 no-repeat;
-        padding-left: 40px;
-    }
-}
-
 .footer-social {
     &__facebook {
         width: 13px;
@@ -503,30 +452,61 @@ a {
     &__instagram {
         width: 25px;
     }
+
+    &__list {
+        list-style-type: none;
+
+        @media @phone {
+            display: flex;
+        }
+
+        @media @tablet {
+            display: block;
+        }
+    }
+
+    &__item {
+        font-weight: normal;
+
+        @media @phone {
+            margin-right: 30px;
+        }
+
+        @media @tablet {
+            margin-right: 0;
+        }
+    }
+}
+
+.container-fix {
+    padding: 0 auto;
+    max-width: 1400px;
 }
 
 .container {
-    margin: 0 100px;
+    margin: 0 auto;
     max-width: 1400px;
+    padding: 0 100px;
 
     @media @phone-strict {
-        margin: 0 10px;
+        padding: 0 20px;
+        padding-bottom: 10px;
     }
 
     @media @desktop-strict {
-        margin: 0 100px;
+        padding: 0 100px;
     }
 
     @media only screen and (min-width: 1400px) {
-        margin: 0 auto;
+        padding: 0 auto;
     }
+}
 
-    &__header {
-        width: 100%;
-    }
+.wrap {
+    width: 100%;
 
     &__nav {
-        margin: 0 -100px 50px -100px;
+        margin: 0 auto 50px auto;
         background-color: #F2F2ED;
 
         @media @phone {
@@ -538,11 +518,11 @@ a {
         }
 
         @media @tablet {
-            margin: 0 -100px 50px -100px;
+            margin: 0 auto 50px auto;
         }
 
         @media @desktop {
-            margin: 0 -100px 50px -100px;
+            margin: 0 auto 50px auto;
         }
     }
 
@@ -606,22 +586,80 @@ a {
     }
 
     &__footer {
-        margin: 0 -100px 50px -100px;
+        background-color: #F2F2ED;
+    }
+}
 
-        @media @phone {
-            margin: 0;
-        }
-
+.top-footer {
+    &__service {
         @media @phone-strict {
-            margin: 0;
+            margin-left: 10px;
         }
 
         @media @tablet {
-            margin: 0 -100px 0 -100px;
+            margin-left: 100px;
         }
 
         @media @desktop {
-            margin: 0 -100px 0 -100px;
+            margin-left: 100px;
+        }
+    }
+
+    &__about {
+        @media @phone {
+            margin-left: 100px;
+            margin-top: 15px;
+        }
+
+        @media @tablet {
+            margin-left: 0;
+            margin-top: 0;
+        }
+
+        @media @phone-strict {
+            margin-left: 10px;
+        }
+    }
+
+    &__features {
+        line-height: 45px;
+
+        @media @phone {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        @media @phone-strict {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        @media @tablet {
+            margin-left: 0;
+            margin-top: 0;
+            line-height: 25px;
+        }
+
+        @media @desktop {
+            line-height: 45px;
+        }
+    }
+
+    &__social {
+        line-height: 35px;
+        text-align: center;
+
+        @media @phone-strict {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media @tablet {
+            margin-right: 100px;
+        }
+
+        @media @desktop {
+            margin-right: 100px;
         }
     }
 }

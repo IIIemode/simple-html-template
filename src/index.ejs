@@ -10,15 +10,15 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="wrap">
 
-        <header class="container__header header">
-            <div class="header__company-name">
-                <a href="#" class="header__company-link">7h3 5h0p</a>
+        <header class="wrap__header header container">
+            <div class="header__company-name company-name">
+                <a href="#" class="company-name__link">7h3 5h0p</a>
             </div>
             <div class="header__img-logo oggetto-logo">
                 <a class="oggetto-logo__link" href="#">
-                    <img class="oggetto-logo__img" src="img/logo.jpg" alt="logo">
+                    <img class="oggetto-logo__img" src="img/logo.svg" alt="logo">
                 </a>
             </div>
             <div class="header__phone phone">
@@ -26,30 +26,32 @@
             </div>
         </header>
 
-        <div class="container__nav nav">
-            <% const navMenu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP']; %>
-            <div class="nav__menu">
-                <% navMenu.forEach((item, index) => { %>
-                    <a href="#" class="nav__link <% if (index === 0) { %><%= 'nav__link_active' %><% } %>"><%= item %></a>
-                <% }); %>
-            </div>
-            <div class="nav__search">
-                <form action="search.php" method="GET" name="searchForm">
-                    <input type="search" class="nav__input" name="search">
-                </form>
+        <div class="wrap__nav nav">
+            <div class="nav__wrapper">
+                <% const navMenu = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP']; %>
+                <div class="nav__menu">
+                    <% navMenu.forEach((item, index) => { %>
+                        <a href="#" class="nav__link <% if (index === 0) { %><%= 'nav__link_active' %><% } %>"><%= item %></a>
+                    <% }); %>
+                </div>
+                <div class="nav__search">
+                    <form action="search.php" method="GET" name="searchForm">
+                        <input type="search" class="nav__input" name="search">
+                    </form>
+                </div>
             </div>
         </div>
 
-        <nav class="container__breadcrumbs breadcrumbs">
+        <nav class="wrap__breadcrumbs breadcrumbs container">
             <% const breadcrumbs = ['LISP', 'Одежда', 'Футболки']; %>
             <% breadcrumbs.forEach((item, index) => { %>
                 <a href="#" class="breadcrumbs__link <% if (index === 2) { %><%= 'breadcrumbs__link_active'%><% } %>"><%= item %></a>
             <% }); %>
         </nav>
 
-        <div class="container__sections sections">
+        <div class="wrap__sections sections container">
             <% const tshirt = {
-                'src': 'img/tshirt_white.jpg',
+                'src': 'img/tshirts/tshirt_white.jpg',
                 'title': 'Футболка Alien technology',
                 'description': 'Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.',
                 'price': '1500₽',
@@ -58,11 +60,11 @@
                 'color-text': 'Цвет:',
                 'color': ['white', 'yellow', 'green']
             }; %>
-            <div class="container__sections_left sections__product-image product-image">
+            <div class="wrap__sections_left sections__product-image product-image">
                 <img src="<%= tshirt.src %>" alt="tshirt" class="product-image__img">
             </div>
 
-            <div class="container__sections_right sections__product-info product-info">
+            <div class="wrap__sections_right sections__product-info product-info">
                 <h1 class="product-info__title"><%= tshirt.title %></h1>
                 <p class="product-info__description"><%= tshirt.description %></p>
                 <span class="product-info__price"><%= tshirt.price %></span>
@@ -87,7 +89,7 @@
                             readonly>
                         <% }); %>
                     </div>
-                    <button class="product-info__btn-buy">Купить</button>
+                    <a href="choice.php" class="product-info__btn-buy">Купить</a>
                 </form>
                 <div class="product-info__later">
                     <a href="#" class="product-info__later-link" >Отложить на потом</a>
@@ -95,90 +97,94 @@
             </div>
         </div>
 
-        <footer class="container__footer footer">
-            <div class="footer__top top-footer">
-                <div class="top-footer__service footer-service">
-                    <p class="footer-service__title">Сервис и поддержка</p>
-                    <% const serviceLeft = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Доставка']; %>
-                    <ul class="footer-service__left">
-                        <% serviceLeft.forEach(item => { %>
-                            <li class="footer-service__item">
-                                <a href="#" class="footer-service__link">
-                                    <%= item %>
-                                </a>
-                            </li>
-                        <% }); %>
-                    </ul>
-                    <% const serviceRight = ['Способы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы']; %>
-                    <ul class="footer-service__right">
-                        <% serviceRight.forEach(item => { %>
-                            <li class="footer-service__item">
-                                <a href="#" class="footer-service__link">
-                                    <%= item %>
-                                </a>
-                            </li>
-                        <% }); %>
-                    </ul>
-                </div>
-                <div class="top-footer__about footer-about">
-                    <p class="footer-about__title">О компании</p>
-                    <% const aboutLeft = ['О нас', 'Контакты', 'Вакансии', 'Партнерам']; %>
-                    <ul class="footer-about__left">
-                        <% aboutLeft.forEach(item => { %>
-                            <li class="footer-about__item">
-                                <a href="#" class="footer-about__link">
-                                    <%= item %>
-                                </a>
-                            </li>
-                        <% }); %>
-                    </ul>
-                    <% const aboutRight = ['Cертификаты', 'Преимущества', 'Наши скидки']; %>
-                    <ul class="footer-about__right">
-                        <% aboutRight.forEach(item => { %>
-                            <li class="footer-about__item">
-                                <a href="#" class="footer-about__link">
-                                    <%= item %>
-                                </a>
-                            </li>
-                        <% }); %>
-                    </ul>
-                </div>
-                <div class="top-footer__features footer-features">
-                        <% const features = ['бесплатная доставка от 4000 ₽', 'пробники в подарок при каждой покупке', 'акции и подарки за покупку']; %>
-                    <ul>
-                        <% features.forEach((item, index) => { %>
-                            <li class="footer-features__item">
-                                <a href="#" class="
-                                <% if (index === 0) { %>
-                                    <%= 'footer-features__delivery'; %>
-                                <% } else if (index === 1) { %>
-                                    <%= 'footer-features__heart'; %>
-                                <% } else if (index === 2) { %>
-                                    <%= 'footer-features__cup'; %>
-                                <% } %>
-                            "><%= item %></a>
-                            </li>
-                        <% }); %>
-                    </ul>
-                </div>
-                <div class="top-footer__social footer-social">
-                        <% const socials = ['facebook', 'twitter', 'instagram']; %>
-                    <ul class="footer-social__list">
-                        <% socials.forEach(item => { %>
-                            <li class="footer-social__item">
-                                <a href="#" class="footer-social__link">
-                                    <img src="img/<%= item %>.svg" alt="<%= item %>" class="footer-social__<%= item %>">
-                                </a>
-                            </li>
-                        <% }); %>
-                    </ul>
-                </div>
-            </div>
+        <footer class="wrap__footer footer">
+            <div class="footer__wrapper">
 
-            <div class="footer__bottom">
-                <hr class="footer__bottom-line">
-                <p>2005-2017 &#169; 7h350p.ru - модный интернет-магазин одежды, обуви и аксессуаров.<br>
-                Все права защищены. Доставка по всей России!</p>
+                <div class="footer__top top-footer">
+                    <div class="top-footer__service footer-service">
+                        <p class="footer-service__title">Сервис и поддержка</p>
+                        <% const serviceLeft = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Доставка']; %>
+                        <ul class="footer-service__left">
+                            <% serviceLeft.forEach(item => { %>
+                                <li class="footer-service__item">
+                                    <a href="#" class="footer-service__link">
+                                        <%= item %>
+                                    </a>
+                                </li>
+                            <% }); %>
+                        </ul>
+                        <% const serviceRight = ['Способы оплаты', 'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы']; %>
+                        <ul class="footer-service__right">
+                            <% serviceRight.forEach(item => { %>
+                                <li class="footer-service__item">
+                                    <a href="#" class="footer-service__link">
+                                        <%= item %>
+                                    </a>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                    <div class="top-footer__about footer-about">
+                        <p class="footer-about__title">О компании</p>
+                        <% const aboutLeft = ['О нас', 'Контакты', 'Вакансии', 'Партнерам']; %>
+                        <ul class="footer-about__left">
+                            <% aboutLeft.forEach(item => { %>
+                                <li class="footer-about__item">
+                                    <a href="#" class="footer-about__link">
+                                        <%= item %>
+                                    </a>
+                                </li>
+                            <% }); %>
+                        </ul>
+                        <% const aboutRight = ['Cертификаты', 'Преимущества', 'Наши скидки']; %>
+                        <ul class="footer-about__right">
+                            <% aboutRight.forEach(item => { %>
+                                <li class="footer-about__item">
+                                    <a href="#" class="footer-about__link">
+                                        <%= item %>
+                                    </a>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                    <div class="top-footer__features footer-features">
+                            <% const features = ['бесплатная доставка от 4000 ₽', 'пробники в подарок при каждой покупке', 'акции и подарки за покупку']; %>
+                        <ul class="footer-features__list">
+                            <% features.forEach((item, index) => { %>
+                                <li class="footer-features__item">
+                                    <a href="#" class="
+                                    <% if (index === 0) { %>
+                                        <%= 'footer-features__delivery'; %>
+                                    <% } else if (index === 1) { %>
+                                        <%= 'footer-features__heart'; %>
+                                    <% } else if (index === 2) { %>
+                                        <%= 'footer-features__cup'; %>
+                                    <% } %>
+                                "><%= item %></a>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div>
+                    <div class="top-footer__social footer-social">
+                            <% const socials = ['facebook', 'twitter', 'instagram']; %>
+                        <ul class="footer-social__list">
+                            <% socials.forEach(item => { %>
+                                <li class="footer-social__item">
+                                    <a href="#" class="footer-social__link">
+                                        <img src="img/icons/<%= item %>.svg" alt="<%= item %>" class="footer-social__<%= item %>">
+                                    </a>
+                                </li>
+                            <% }); %>
+                        </ul>
+                    </div> 
+                </div>
+
+                <div class="footer__bottom copyright">
+                    <hr class="copyright__text">
+                    <p class="copyright__text">2005-2017 &#169; 7h350p.ru - модный интернет-магазин одежды, обуви и аксессуаров.<br>
+                    Все права защищены. Доставка по всей России!</p>
+                </div>
+
             </div>
         </footer>
 

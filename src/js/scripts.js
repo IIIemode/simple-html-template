@@ -7,7 +7,7 @@
     tShirt.addEventListener('click', ( {target} ) => {
         if (target.name === 'color') {
             const colors = target.parentNode.children;
-            leftSectionImg.src = 'img/tshirt_' + target.dataset.color + '.jpg';
+            leftSectionImg.src = 'img/tshirts/tshirt_' + target.dataset.color + '.jpg';
             for (let i = 0; i < colors.length; i++) {
                 if (colors[i].classList.contains('product-info__color_active')) {
                     colors[i].classList.remove('product-info__color_active');
