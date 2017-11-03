@@ -35,7 +35,7 @@ gulp.task('styles', () => {
 
 gulp.task('img', () => {
     gulp.src('src/img/**/*.*')
-        .pipe(process.env.NODE_ENV.trim() == 'production' ? imagemin() : gulp.dest('./dist/img'));  
+        .pipe(process.env.NODE_ENV == 'production' ? imagemin() : gulp.dest('./dist/img'));  
 });
 
 gulp.task('js', () => {
