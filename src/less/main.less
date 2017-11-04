@@ -51,6 +51,22 @@ a {
 .oggetto-logo {
     width: 52px;
     padding: 20px 0;
+
+    @media @phone {
+        padding: 10px 0 0;
+    }
+
+    @media @phone-strict {
+        padding: 10px 0 0;
+    }
+
+    @media @tablet {
+        padding: 20px 0;
+    }
+
+    @media @desktop {
+        padding: 20px 0;
+    }
 }
 
 .nav {
@@ -608,7 +624,7 @@ a {
     &__about {
         @media @phone {
             margin-left: 100px;
-            margin-top: 15px;
+            margin-top: 40px;
         }
 
         @media @tablet {
@@ -625,13 +641,15 @@ a {
         line-height: 45px;
 
         @media @phone {
-            margin-top: 20px;
+            margin-top: 40px;
             margin-left: 10px;
+            line-height: 25px;
         }
 
         @media @phone-strict {
-            margin-top: 20px;
+            margin-top: 40px;
             margin-left: 10px;
+            line-height: 25px;
         }
 
         @media @tablet {
@@ -652,6 +670,7 @@ a {
         @media @phone-strict {
             margin-left: auto;
             margin-right: auto;
+            margin-top: 40px;
         }
 
         @media @tablet {
