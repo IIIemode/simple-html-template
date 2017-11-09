@@ -51,7 +51,7 @@
 
         <div class="wrap__sections sections container">
             <% const tshirt = {
-                'src': 'img/tshirts/tshirt_white.jpg',
+                'src': 'img/tshirts/tshirt_white',
                 'title': 'Футболка Alien technology',
                 'description': 'Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.',
                 'price': '1500₽',
@@ -61,7 +61,10 @@
                 'color': ['white', 'yellow', 'green']
             }; %>
             <div class="wrap__sections_left sections__product-image product-image">
-                <img src="<%= tshirt.src %>" alt="tshirt" class="product-image__img">
+                <picture class="product-image__sources">
+                    <source srcset="<%= tshirt.src %>.jpg" media="(min-width: 769px)" class="product-image__tablet-img">
+                    <img src="<%= tshirt.src %>_mobile.jpg" alt="tshirt" class="product-image__img">
+                </picture>
             </div>
 
             <div class="wrap__sections_right sections__product-info product-info">
