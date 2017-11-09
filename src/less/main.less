@@ -68,6 +68,11 @@ a {
         align-items: center;
         max-width: 1400px;
         margin: 0 auto;
+        padding: 0 100px;
+
+        @media @phone-strict {
+            padding: 0;
+        }
     }
 
     &__menu {
@@ -78,7 +83,7 @@ a {
         }
 
         @media @tablet {
-            margin-left: 100px;
+            margin-left: 0;
         }
     }
 
@@ -114,7 +119,7 @@ a {
 
         @media @tablet {
             width: 280px;
-            margin: 0 100px 5px;
+            margin: 0 0 5px;
         }
     }
 }
@@ -288,6 +293,14 @@ a {
     &__wrapper {
         max-width: 1400px;
         margin: 0 auto;
+
+        @media @phone {
+            padding: 0;
+        }
+
+        @media @tablet {
+            padding: 0 100px;
+        }
     }
 
     &__top {
@@ -321,22 +334,6 @@ a {
 
         & hr {
             margin-bottom: 35px;
-
-            @media @phone {
-                margin-bottom: 35px;
-            }
-
-            @media @tablet {
-                margin-left: 100px;
-                margin-right: 100px;
-            }
-        }
-
-        & p {
-            @media @tablet {
-                margin-left: 100px;
-                margin-right: 100px;
-            }
         }
     }
 
@@ -544,7 +541,7 @@ a {
         }
 
         @media @tablet {
-            margin-left: 100px;
+            margin-left: 0;
         }
     }
 
@@ -587,7 +584,7 @@ a {
         }
 
         @media @tablet {
-            margin-right: 100px;
+            margin: 0;
         }
     }
 }
