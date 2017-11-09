@@ -50,21 +50,12 @@ a {
 
 .oggetto-logo {
     width: 52px;
-    padding: 20px 0;
 
     @media @phone {
         padding: 10px 0 0;
     }
 
-    @media @phone-strict {
-        padding: 10px 0 0;
-    }
-
     @media @tablet {
-        padding: 20px 0;
-    }
-
-    @media @desktop {
         padding: 20px 0;
     }
 }
@@ -80,22 +71,13 @@ a {
     }
 
     &__menu {
-        margin-left: 100px;
         padding: 15px 0;
 
         @media @phone {
             margin-left: 20px;
         }
 
-        @media @phone-strict {
-            margin-left: 20px;
-        }
-
         @media @tablet {
-            margin-left: 100px;
-        }
-
-        @media @desktop {
             margin-left: 100px;
         }
     }
@@ -118,8 +100,6 @@ a {
     }
 
     &__input {
-        margin: 0 100px;
-        width: 280px;
         height: 30px;
         color: #C00;
         border: 1px solid #F2F2ED;
@@ -129,20 +109,10 @@ a {
 
         @media @phone {
             width: 220px;
-            margin: 5px 5px 5px 20px;
-        }
-
-        @media @phone-strict {
-            width: 220px;
             margin: 5px 20px;
         }
 
         @media @tablet {
-            width: 280px;
-            margin: 0 100px 5px;
-        }
-
-        @media @desktop {
             width: 280px;
             margin: 0 100px 5px;
         }
@@ -322,39 +292,42 @@ a {
 
     &__top {
         display: flex;
-        flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
         padding-top: 65px;
-        padding-bottom: 100px;
 
-        @media @phone-strict {
+        @media @phone {
             flex-direction: column;
             padding-bottom: 50px;
         }
 
         @media @tablet {
             flex-direction: row;
-        }
-
-        @media @desktop {
-            flex-direction: row;
+            padding-bottom: 100px;
         }
     }
 
     &__bottom {
-        margin-top: -30px;
-        padding-bottom: 105px;
+        padding-bottom: 50px;
 
+        @media @phone {
+            padding: 0 20px 50px;
+        }
+
+        @media @tablet {
+
+            margin-top: -30px;
+            padding: 0 0 105px;
+        }
+        
         & hr {
             margin-bottom: 35px;
 
-            @media @tablet {
-                margin-left: 100px;
-                margin-right: 100px;
+            @media @phone {
+                margin-bottom: 35px;
             }
 
-            @media @desktop {
+            @media @tablet {
                 margin-left: 100px;
                 margin-right: 100px;
             }
@@ -365,17 +338,6 @@ a {
                 margin-left: 100px;
                 margin-right: 100px;
             }
-
-            @media @desktop {
-                margin-left: 100px;
-                margin-right: 100px;
-            }
-        }
-
-        @media @phone-strict {
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 50px;
         }
     }
 
@@ -494,22 +456,15 @@ a {
     }
 }
 
-.container-fix {
-    padding: 0 auto;
-    max-width: 1400px;
-}
-
 .container {
     margin: 0 auto;
     max-width: 1400px;
-    padding: 0 100px;
 
-    @media @phone-strict {
-        padding: 0 20px;
-        padding-bottom: 10px;
+    @media @phone {
+        padding: 0 20px 10px;
     }
 
-    @media @desktop-strict {
+    @media @tablet {
         padding: 0 100px;
     }
 
@@ -522,22 +477,13 @@ a {
     width: 100%;
 
     &__nav {
-        margin: 0 auto 50px;
         background-color: #F2F2ED;
 
         @media @phone {
             margin: 0 0 50px;
         }
 
-        @media @phone-strict {
-            margin: 0 0 50px;
-        }
-
         @media @tablet {
-            margin: 0 auto 50px;
-        }
-
-        @media @desktop {
             margin: 0 auto 50px;
         }
     }
@@ -547,14 +493,15 @@ a {
     }
 
     &__sections {
-        margin-bottom: 100px;
-
-        @media @phone-strict {
+        @media @phone {
             margin-bottom: 0;
         }
 
+        @media @tablet {
+            margin-bottom: 100px;
+        }
+
         &_left {
-            margin-right: 5%;
             margin-top: 0;
 
             @media @phone {
@@ -563,36 +510,21 @@ a {
                 margin-bottom: 35px;
             }
 
-            @media @phone-strict {
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 35px;
-            }
-
             @media @tablet {
                 width: 50%;
-                margin-right: 0;
             }
 
             @media @desktop {
-                width: 50%;
                 margin-right: 5%;
             }
         }
 
         &_right {
-            width: 45%;
+            margin-right: 0;
+            margin-bottom: 35px;
 
             @media @phone {
                 width: 100%;
-                margin-right: 0;
-                margin-bottom: 35px;
-            }
-
-            @media @phone-strict {
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 35px;
             }
 
             @media @tablet {
@@ -608,22 +540,18 @@ a {
 
 .top-footer {
     &__service {
-        @media @phone-strict {
-            margin-left: 10px;
+        @media @phone {
+            margin-left: 20px;
         }
 
         @media @tablet {
-            margin-left: 100px;
-        }
-
-        @media @desktop {
             margin-left: 100px;
         }
     }
 
     &__about {
         @media @phone {
-            margin-left: 100px;
+            margin-left: 20px;
             margin-top: 40px;
         }
 
@@ -631,22 +559,10 @@ a {
             margin-left: 0;
             margin-top: 0;
         }
-
-        @media @phone-strict {
-            margin-left: 10px;
-        }
     }
 
     &__features {
-        line-height: 45px;
-
         @media @phone {
-            margin-top: 40px;
-            margin-left: 10px;
-            line-height: 25px;
-        }
-
-        @media @phone-strict {
             margin-top: 40px;
             margin-left: 10px;
             line-height: 25px;
@@ -667,17 +583,11 @@ a {
         line-height: 35px;
         text-align: center;
 
-        @media @phone-strict {
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 40px;
+        @media @phone {
+            margin: 40px auto 0;
         }
 
         @media @tablet {
-            margin-right: 100px;
-        }
-
-        @media @desktop {
             margin-right: 100px;
         }
     }
