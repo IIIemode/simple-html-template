@@ -1,0 +1,589 @@
+@import (less) 'node_modules/normalize.css/normalize.css';
+@import 'media';
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+h1,
+h2,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.company-name {
+    &__link {
+        color: #c00;
+        font-weight: bold;
+    }
+}
+
+.header {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &__company-name {
+        display: inline-block;
+        font-size: 24px;
+    }
+
+    &__img-logo {
+        display: inline-block;
+    }
+
+    &__phone {
+        display: inline-block;
+        font-size: 24px;
+        color: #C00;
+        font-weight: bold;
+    }
+}
+
+.oggetto-logo {
+    width: 52px;
+
+    @media @phone {
+        padding: 10px 0 0;
+    }
+
+    @media @tablet {
+        padding: 20px 0;
+    }
+}
+
+.nav {
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 100px;
+
+        @media @phone-strict {
+            padding: 0;
+        }
+    }
+
+    &__menu {
+        padding: 15px 0;
+
+        @media @phone {
+            margin-left: 20px;
+        }
+
+        @media @tablet {
+            margin-left: 0;
+        }
+    }
+
+    &__link {
+        font-size: 16px;
+        color: #C00;
+        margin-right: 15px;
+        text-decoration: underline;
+
+        &:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        &_active {
+            color: black;
+            text-decoration: none;
+        }
+    }
+
+    &__input {
+        height: 30px;
+        color: #C00;
+        border: 1px solid #F2F2ED;
+        padding: 5px 10px 5px 0;
+        background: url(../img/icons/search.svg) white 97% no-repeat;
+        background-size: auto 60%;
+
+        @media @phone {
+            width: 220px;
+            margin: 5px 20px;
+        }
+
+        @media @tablet {
+            width: 280px;
+            margin: 0 0 5px;
+        }
+    }
+}
+
+.breadcrumbs {
+    &__link {
+        font-size: 16px;
+        color: #C00;
+        text-decoration: underline;
+
+        &::after {
+            content: '/';
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        &:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        &_active {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+
+    :last-child::after {
+        content: '';
+        display: inline-block;
+    }
+}
+
+.sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__product-image {
+        background-size: 100%;
+        display: inline-block;
+        width: 50%;
+        margin-right: 5%;
+        min-width: 300px;
+    }
+
+    &__product-info {
+        display: inline-block;
+        width: 45%;
+    }
+}
+
+.product-image {
+    &__img {
+        width: 100%;
+    }
+}
+
+.product-info {
+    &__title {
+        font-size: 36px;
+        margin-bottom: 16px;
+    }
+
+    &__description {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    &__price {
+        font-weight: bold;
+        font-size: 36px;
+        color: #C00;
+    }
+
+    &__category {
+        margin-top: 23px;
+    }
+
+    &__size-text,
+    &__color-text {
+        margin-bottom: 9px;
+    }
+
+    &__size {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 62px;
+        height: 62px;
+        border: 1px solid black;
+        font-size: 36px;
+        margin-right: 10px;
+        cursor: pointer;
+        text-align: center;
+
+        &::placeholder {
+            color: black;
+        }
+
+        &_active {
+            border: 3px solid #F02323;
+        }
+
+        &:hover {
+            border: 3px solid #F02323;
+        }
+    }
+
+    &__color {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 62px;
+        height: 62px;
+        border: 1px solid black;
+        font-size: 36px;
+        margin-right: 10px;
+        cursor: pointer;
+
+        &_active {
+            border: 3px solid #F02323;
+        }
+
+        &:hover {
+            border: 3px solid #F02323;
+        }
+
+        &_white {
+            background-color: white;
+        }
+
+        &_yellow {
+            background-color: #E8DA53;
+        }
+
+        &_green {
+            background-color: #B4BEA5;
+        }
+    }
+
+    &__btn-buy {
+        display: inline-block;
+        font-size: 36px;
+        padding: 3% 7%;
+        margin-top: 24px;
+        color: #FDD;
+        background-color: #CE0000;
+        cursor: pointer;
+    }
+
+    &__later {
+        background: url(../img/icons/heartFill.svg) no-repeat;
+        padding-left: 35px;
+        margin-top: 40px;
+        height: 25px;
+        line-height: 1.5;
+
+        &-link {
+            display: inline-block;
+            color: #C3C3C3;
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer {
+    font-size: 14px;
+    line-height: 24px;
+
+    &__wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+
+        @media @phone {
+            padding: 0;
+        }
+
+        @media @tablet {
+            padding: 0 100px;
+        }
+    }
+
+    &__top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: 65px;
+
+        @media @phone {
+            flex-direction: column;
+            padding-bottom: 50px;
+        }
+
+        @media @tablet {
+            flex-direction: row;
+            padding-bottom: 100px;
+        }
+    }
+
+    &__bottom {
+        padding-bottom: 50px;
+
+        @media @phone {
+            padding: 0 20px 50px;
+        }
+
+        @media @tablet {
+            margin-top: -30px;
+            padding: 0 0 105px;
+        }
+
+        & hr {
+            margin-bottom: 35px;
+        }
+    }
+
+    & a:hover {
+        text-decoration: underline;
+    }
+
+    & a {
+        color: black;
+        text-decoration: none;
+    }
+
+    & ul {
+        list-style-type: none;
+
+        & li {
+            font-weight: normal;
+        }
+    }
+}
+
+.footer-features {
+    margin-top: -10px;
+
+    &__delivery {
+        background: url(../img/icons/delivery.svg) no-repeat;
+        padding-left: 40px;
+    }
+
+    &__heart {
+        background: url(../img/icons/heart.svg) 15px 0 no-repeat;
+        padding-left: 40px;
+    }
+
+    &__cup {
+        background: url(../img/icons/cup.svg) 18px 0 no-repeat;
+        padding-left: 40px;
+    }
+}
+
+.footer-service {
+    display: flex;
+
+    &__title {
+        font-size: 16px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    &__left {
+        margin-top: 40px;
+        margin-left: -155px;
+    }
+
+    &__right {
+        margin-top: 40px;
+        margin-left: 50px;
+    }
+}
+
+.footer-about {
+    display: flex;
+
+    &__title {
+        font-size: 16px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    &__left {
+        margin-top: 40px;
+        margin-left: -90px;
+    }
+
+    &__right {
+        margin-top: 40px;
+        margin-left: 50px;
+    }
+}
+
+.footer-social {
+    &__facebook {
+        width: 13px;
+    }
+
+    &__twitter {
+        width: 25px;
+    }
+
+    &__instagram {
+        width: 25px;
+    }
+
+    &__list {
+        list-style-type: none;
+
+        @media @phone {
+            display: flex;
+        }
+
+        @media @tablet {
+            display: block;
+        }
+    }
+
+    &__item {
+        font-weight: normal;
+
+        @media @phone {
+            margin-right: 30px;
+        }
+
+        @media @tablet {
+            margin-right: 0;
+        }
+    }
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1400px;
+
+    @media @phone {
+        padding: 0 20px 10px;
+    }
+
+    @media @tablet {
+        padding: 0 100px;
+    }
+
+    @media only screen and (min-width: 1400px) {
+        padding: 0 auto;
+    }
+}
+
+.wrap {
+    width: 100%;
+
+    &__nav {
+        background-color: #F2F2ED;
+
+        @media @phone {
+            margin: 0 0 50px;
+        }
+
+        @media @tablet {
+            margin: 0 auto 50px;
+        }
+    }
+
+    &__breadcrumbs {
+        margin-bottom: 20px;
+    }
+
+    &__sections {
+        @media @phone {
+            margin-bottom: 0;
+        }
+
+        @media @tablet {
+            margin-bottom: 100px;
+        }
+
+        &_left {
+            margin-top: 0;
+
+            @media @phone {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 35px;
+            }
+
+            @media @tablet {
+                width: 50%;
+            }
+
+            @media @desktop {
+                margin-right: 5%;
+            }
+        }
+
+        &_right {
+            margin-right: 0;
+            margin-bottom: 35px;
+
+            @media @phone {
+                width: 100%;
+            }
+
+            @media @tablet {
+                width: 45%;
+            }
+        }
+    }
+
+    &__footer {
+        background-color: #F2F2ED;
+    }
+}
+
+.top-footer {
+    &__service {
+        @media @phone {
+            margin-left: 20px;
+        }
+
+        @media @tablet {
+            margin-left: 0;
+        }
+    }
+
+    &__about {
+        @media @phone {
+            margin-left: 20px;
+            margin-top: 40px;
+        }
+
+        @media @tablet {
+            margin-left: 0;
+            margin-top: 0;
+        }
+    }
+
+    &__features {
+        @media @phone {
+            margin-top: 40px;
+            margin-left: 10px;
+            line-height: 25px;
+        }
+
+        @media @tablet {
+            margin-left: 0;
+            margin-top: 0;
+            line-height: 25px;
+        }
+
+        @media @desktop {
+            line-height: 45px;
+        }
+    }
+
+    &__social {
+        line-height: 35px;
+        text-align: center;
+
+        @media @phone {
+            margin: 40px auto 0;
+        }
+
+        @media @tablet {
+            margin: 0;
+        }
+    }
+}
