@@ -6,8 +6,7 @@ const rename = require('gulp-rename');
 const ejs = require('gulp-ejs');
 const gutil = require('gulp-util');
 const sourcemaps = require('gulp-sourcemaps');
-const imagemin = require('imagemin');
-const imageminPngquant = require('imagemin-pngquant');
+const imagemin = require('gulp-imagemin');
 
 // Автоперезагрузка при изменении файлов в папке `dist`:
 // Принцип: меняем файлы в `/src`, они обрабатываются и переносятся в `dist` и срабатывает автоперезагрузка.
@@ -35,9 +34,8 @@ gulp.task('styles', () => {
 });
 
 gulp.task('img', () => {
-    imagemin(['src/img/**/*.*'], './dist/img', {
-        use: [imageminPngquant()]
-    });
+    gulp.src('src/img/**/*.*')
+        .pipe(process.env.NODE_ENV == 'production' ? imagemin() : gulp.dest('./dist/img'));  
 });
 
 gulp.task('js', () => {
