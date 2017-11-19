@@ -7,6 +7,8 @@ const ejs = require('gulp-ejs');
 const gutil = require('gulp-util');
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
+const concat = require('gulp-concat');
+// const uglify = require('gulp-uglify');
 
 // Автоперезагрузка при изменении файлов в папке `dist`:
 // Принцип: меняем файлы в `/src`, они обрабатываются и переносятся в `dist` и срабатывает автоперезагрузка.
@@ -38,9 +40,19 @@ gulp.task('img', () => {
         .pipe(process.env.NODE_ENV == 'production' ? imagemin() : gulp.dest('./dist/img'));  
 });
 
+gulp.task('scripts', () => {
+    gulp.src(['src/js/**/*.*'])
+        .pipe(gulp.dest('./dist/js')); // Помещаем в папку './dist/js'
+});
+
 gulp.task('js', () => {
-    gulp.src('src/js/**/*.*')
-        .pipe(gulp.dest('./dist/js'));
+    gulp.src([ // Берем script.js и библиотеку jquery
+        'node_modules/jquery/dist/jquery.min.js',
+        'src/js/**/scripts.js'
+    ])
+        .pipe(concat('script.js')) // Собираем их в кучу в новом файле script.js
+        // .pipe(uglify()) // Сжимаем scripts.js
+        .pipe(gulp.dest('./dist/js')); // Помещаем в папку './dist/js'
 });
 
 gulp.task('html', () => {
@@ -59,5 +71,5 @@ gulp.task('watch', () => {
     gulp.watch('src/js/**/*.*', ['js']);
 });
 
-gulp.task('default', ['styles', 'html', 'img', 'js', 'livereload', 'watch']);
-gulp.task('prod', ['styles', 'html', 'img', 'js']);
+gulp.task('default', ['styles', 'html', 'img', 'scripts', 'js', 'livereload', 'watch']);
+gulp.task('prod', ['styles', 'html', 'img', 'scripts', 'js']);
