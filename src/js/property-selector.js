@@ -1,11 +1,10 @@
-const d = document;
-const Dispatcher = d.getElementById('choiceForm');
+const Dispatcher = $('#choiceForm')[0]; 
 
 export default class PropertySelector {
     constructor(el) {
         this.el = el;
 
-        this.el.addEventListener('click', ev => {
+        this.el.on('click', ev => {
             const type = ev.target.dataset['type'];
             const value = ev.target.dataset['value'];
 
@@ -13,7 +12,8 @@ export default class PropertySelector {
         });
     }
     dispatchEvent(type, value) {
-        const event = new CustomEvent('property-selected', {
+
+        const event = new $(Dispatcher).triggerHandler('property-selected', {
             detail: {
                 type: type,
                 value: value
